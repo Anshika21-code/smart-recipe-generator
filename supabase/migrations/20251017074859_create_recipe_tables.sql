@@ -179,3 +179,11 @@ CREATE POLICY "Users can update own preferences"
   TO authenticated
   USING (auth.uid() = user_id)
   WITH CHECK (auth.uid() = user_id);
+
+UPDATE recipes 
+SET image_url = '/biryani.jpg' 
+WHERE name = 'Caprese Salad';
+
+UPDATE recipes 
+SET image_url = '/sandwich.jpg' 
+WHERE name = 'Grilled Cheese Sandwich';
